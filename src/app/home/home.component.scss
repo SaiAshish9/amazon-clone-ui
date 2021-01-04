@@ -1,0 +1,27 @@
+.container{
+    width: 100%;
+    min-height: 90vh;
+    background-color: #eaeded;
+}
+
+.main{
+    width: 85vw;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.card{
+    height: 25rem;
+    width: 20.5rem;
+    background-color: white;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.categories{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+}

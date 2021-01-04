@@ -1,3 +1,4 @@
+import { HomedetailsService } from './../services/homedetails.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private homeDS:HomedetailsService) { }
+
+  categories:any[]=[];
 
   ngOnInit(): void {
+    this.homeDS.fetchCategories().subscribe((data:any)=>{
+      this.categories=data
+    },err=>{
+      console.log(err)
+    })
+  }
+
+
+  numArr(n){
+   return Array(n);
   }
 
 }
