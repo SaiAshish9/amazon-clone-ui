@@ -1,0 +1,38 @@
+<div
+  style="
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+  "
+>
+  <select
+    [style.borderLeft]="inpFocussed ? '4px solid #fe9b3b' : 'none'"
+    [style.borderRight]="inpFocussed ? 'none' : '2px solid #eee'"
+    [style.borderTop]="inpFocussed ? '4px solid #fe9b3b' : 'none'"
+    [style.borderBottom]="inpFocussed ? '4px solid #fe9b3b' : 'none'"
+    class="select"
+  >
+    <option>All</option>
+  </select>
+  <div
+    class="container"
+    [style.borderTop]="inpFocussed ? '4px solid #fe9b3b' : 'none'"
+    [style.borderBottom]="inpFocussed ? '4px solid #fe9b3b' : 'none'"
+  >
+    <input
+      type="text"
+      (focusin)="toggleFocus()"
+      (focusout)="toggleFocus()"
+      style="width: 100%"
+    />
+  </div>
+  <div
+    class="search"
+    [style.borderRight]="inpFocussed ? '4px solid #fe9b3b' : 'none'"
+    [style.borderTop]="inpFocussed ? '4px solid #fe9b3b' : 'none'"
+    [style.borderBottom]="inpFocussed ? '4px solid #fe9b3b' : 'none'"
+  >
+    <mat-icon style="font-size: 1.8rem">search</mat-icon>
+  </div>
+</div>

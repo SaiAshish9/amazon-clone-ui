@@ -1,3 +1,4 @@
+import { SearchComponent } from './home/search/search.component';
 import { HomeTagComponent } from './home/home-tag/home-tag.component';
 import { HomeCategoriesComponent } from './home/categories/categories.component';
 import { BrowserModule } from '@angular/platform-browser';
@@ -23,6 +24,7 @@ import { NbIconModule } from '@nebular/theme';
     NavbarComponent,
     HomeCategoriesComponent,
     HomeTagComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
