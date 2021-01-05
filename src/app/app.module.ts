@@ -11,6 +11,9 @@ import { MenubarComponent } from './menubar/menubar.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MaterialModule } from './material.module';
 import { NzCarouselModule } from 'ng-zorro-antd/carousel';
+import { NbThemeModule } from '@nebular/theme';
+import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { NbIconModule } from '@nebular/theme';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,7 @@ import { NzCarouselModule } from 'ng-zorro-antd/carousel';
     MenubarComponent,
     NavbarComponent,
     HomeCategoriesComponent,
-    HomeTagComponent
+    HomeTagComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,10 @@ import { NzCarouselModule } from 'ng-zorro-antd/carousel';
     AppRoutingModule,
     MaterialModule,
     BrowserAnimationsModule,
-    NzCarouselModule
+    NzCarouselModule,
+    NbThemeModule.forRoot(),
+    NbEvaIconsModule,
+    NbIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,3 +1,112 @@
 <div class="container">
+  <!-- left -->
+  <div class="leftCont">
+    <img
+      class="logo"
+      style="height: 6vh; width: 10rem"
+      src="../assets/logo.png"
+      alt="img"
+    />
+    <div
+      class="location"
+      style="padding: 10px; display: flex; align-items: center"
+    >
+      <mat-icon
+        class="material-icons-outlined"
+        style="color: #fff; align-self: flex-end; margin-bottom: 2px"
+        >room</mat-icon
+      >
+      <div
+        style="
+          color: #fff;
+          margin: auto;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        "
+      >
+        <p style="margin: 0px; font-size: 12px; opacity: 0.8">Deliver to</p>
+        <p style="margin: 0px; font-weight: 600; font-size: 12px">India</p>
+      </div>
+    </div>
+  </div>
+  <!-- right -->
 
+  <div class="rightCont">
+    <div class="border" style="display: flex; justify-content: space-between">
+      <img
+        src="https://cdn.britannica.com/97/1597-004-05816F4E/Flag-India.jpg"
+        alt="img"
+        style="height: 2vh"
+      />
+      <mat-icon style="color: #a7acb2">arrow_drop_down</mat-icon>
+    </div>
+    <div
+      class="border"
+      style="
+        align-items: flex-end;
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 10px;
+      "
+    >
+      <div>
+        <p class="title" style="font-size: 12; opacity: 0.8">Hello, Sign in</p>
+        <p class="title">Accounts & Lists</p>
+      </div>
+      <mat-icon style="color: #a7acb2">arrow_drop_down</mat-icon>
+    </div>
+    <div
+      class="border"
+      style="
+        align-items: flex-end;
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 10px;
+      "
+    >
+      <div>
+        <p class="title" style="font-size: 12; opacity: 0.8">Returns</p>
+        <p class="title">& Orders</p>
+      </div>
+      <mat-icon style="color: #a7acb2">arrow_drop_down</mat-icon>
+    </div>
+    <div
+      class="border"
+      style="
+        align-items: flex-end;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 10px;
+        margin-right: 1rem;
+      "
+    >
+      <nb-icon
+        [options]="{ animation: { type: 'pulse' } }"
+        style="
+          position: relative;
+          z-index: 1;
+          color: #fff;
+          height: 2rem;
+          width: 2rem;
+          cursor: pointer;
+        "
+        icon="shopping-cart-outline"
+      ></nb-icon>
+      <p class="title">
+        <span
+          style="
+            color: #c35634;
+            font-size: 18px;
+            position: relative;
+            left: -10px;
+            z-index: 20;
+          "
+          >0</span
+        >
+        <br />
+        Cart
+      </p>
+    </div>
+  </div>
 </div>

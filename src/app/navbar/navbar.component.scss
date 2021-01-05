@@ -1,5 +1,34 @@
-.container{
-    height: 6vh;
-    width: 100%;
-    background-color: #131921;
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined");
+
+.container {
+  max-height: 7vh;
+  width: 100%;
+  background-color: #141722;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title{
+  margin: 0px;
+  color: #fff;
+  font-weight: 550;
+}
+
+.leftCont,
+.rightCont {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo,
+.location,
+.border {
+  cursor: pointer;
+  padding: 10px;
+  &:hover {
+    border: 1px solid #fff;
+  }
 }
