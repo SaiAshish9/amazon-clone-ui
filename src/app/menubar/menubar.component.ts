@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-menubar',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenubarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route:Router) { }
+
+  options=[
+    "Today's Deals",
+    "Customer Service",
+    "Gift Cards",
+    "Sell",
+    "Registry"
+  ]
 
   ngOnInit(): void {
   }
+
+
+  
 
 }
