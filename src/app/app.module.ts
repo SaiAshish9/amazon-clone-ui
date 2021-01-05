@@ -1,3 +1,5 @@
+import { HomeTagComponent } from './home/home-tag/home-tag.component';
+import { HomeCategoriesComponent } from './home/categories/categories.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -8,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MenubarComponent } from './menubar/menubar.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MaterialModule } from './material.module';
+import { NzCarouselModule } from 'ng-zorro-antd/carousel';
 
 @NgModule({
   declarations: [
@@ -15,6 +18,8 @@ import { MaterialModule } from './material.module';
     HomeComponent,
     MenubarComponent,
     NavbarComponent,
+    HomeCategoriesComponent,
+    HomeTagComponent
   ],
   imports: [
     BrowserModule,
@@ -22,6 +27,7 @@ import { MaterialModule } from './material.module';
     AppRoutingModule,
     MaterialModule,
     BrowserAnimationsModule,
+    NzCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent],

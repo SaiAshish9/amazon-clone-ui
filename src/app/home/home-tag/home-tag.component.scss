@@ -1,0 +1,35 @@
+.container { 
+  width: 100%;
+  max-height: 60vh;
+}
+
+nz-carousel-content{
+  overflow: hidden !important;
+}
+
+.tag {
+  background-color: #eaeded;
+  height: 2.5rem;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.title{
+    margin: auto;
+    font-weight: 550;
+}
+
+a{
+    color: #0d7387;
+    &:hover{
+        color: #c85050;
+        text-decoration: underline;
+    }
+}

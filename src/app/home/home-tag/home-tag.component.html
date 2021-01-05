@@ -1,0 +1,52 @@
+<div style="width: 100%; height: 60vh; overflow: hidden">
+  <nz-carousel [nzDots]="false" #carousel>
+    <img
+      nz-carousel-content
+      class="container"
+      *ngFor="let i of images"
+      [src]="i"
+      alt="img"
+    />
+  </nz-carousel>
+</div>
+<!-- nzAutoPlay -->
+<div
+  style="position: relative; bottom: 50vh; width: 100%; padding: 0 2rem 0 1rem"
+>
+  <div class="row">
+    <mat-icon
+      (click)="prev()"
+      style="
+        cursor: pointer;
+        font-size: 3rem;
+        font-weight: lighter;
+        color: #fff;
+      "
+      >arrow_back_ios</mat-icon
+    >
+    <mat-icon
+      (click)="next()"
+      style="
+        cursor: pointer;
+        font-size: 3rem;
+        font-weight: lighter;
+        color: #fff;
+      "
+      >arrow_forward_ios</mat-icon
+    >
+  </div>
+</div>
+
+<div style="position: relative; bottom: 35vh; width: 100%; padding: 0 1rem">
+  <div class="tag">
+    <p class="title">
+      You are on amazon.com. You can also shop on Amazon India for millions of
+      products with fast local delivery.
+      <span>
+        <a target="_blank" href="https://amazon.in">
+          Click here to go to amazon.in
+        </a>
+      </span>
+    </p>
+  </div>
+</div>
