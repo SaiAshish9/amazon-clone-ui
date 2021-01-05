@@ -1,13 +1,46 @@
 <div class="container">
   <div class="main">
-    <div class="categories">
-      <div class="card" *ngFor="let x of categories">
-          <img
-          [src]="x.imageUrl"
+    <div *ngIf="categories.length != 0; else spinner" class="categories">
+      <div class="card" *ngFor="let x of categories | slice: 0:3">
+        <p class="title">{{ x.title }}</p>
+        <img [src]="x.imageUrl" alt="img" style="height: 80%; width: 100%" />
+        <a class="link" routerLink="/">See more</a>
+      </div>
+      <div class="column rightmostcard">
+        <div
+          class="card column"
+          style="
+            justify-content: space-around;
+            height: 9rem;
+            padding: 0px;
+            margin: 0px;
+            padding: 2rem 0;
+          "
+        >
+          <p class="title" style="font-size: 1.2rem">
+            Sign in for the best experience
+          </p>
+          <button class="btn">Sign in securely</button>
+        </div>
+        <img
           alt="img"
-          style="height:100%;width:100%;"
-          />
+          style="width: 82%; height: 14.5rem"
+          src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/October/Fuji_D2_45M_en_US_1x._CB418309979_.jpg"
+        />
+      </div>
+      <div
+        class="card"
+        *ngFor="let x of categories | slice: 3:categories.length"
+      >
+        <p class="title">{{ x.title }}</p>
+        <img [src]="x.imageUrl" alt="img" style="height: 80%; width: 100%" />
+        <a class="link" routerLink="/">See more</a>
       </div>
     </div>
+    <ng-template #spinner>
+      <div class="row" style="height: 80vh">
+        <mat-spinner diameter="30"></mat-spinner>
+      </div>
+    </ng-template>
   </div>
 </div>

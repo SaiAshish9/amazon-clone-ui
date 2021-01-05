@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MenubarComponent } from './menubar/menubar.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { MaterialModule } from './material.module';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    MaterialModule,
     BrowserAnimationsModule,
   ],
   providers: [],
