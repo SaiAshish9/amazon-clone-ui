@@ -1,0 +1,72 @@
+<div class="container" style="position: relative; top: 2rem">
+  <div class="container1">
+    <div class="row">
+      <div
+        style="width: 20%; display: flex; flex-direction: column"
+        *ngFor="let i of data1"
+      >
+        <p style="color: #fff; font-weight: 550; font-size: 16px">
+          {{ i.title }}
+        </p>
+        <a
+          class="p1"
+          *ngFor="let j of i.contents"
+          href="/"
+          style="color: #fff; opacity: 0.9"
+        >
+          {{ j }}
+        </a>
+      </div>
+    </div>
+    <mat-divider></mat-divider>
+  </div>
+  <div class="container2">
+    <div style="padding: 2rem 0; flex-wrap: wrap" class="row">
+      <div *ngFor="let i of genArray(45)" style="margin: 2rem 0">
+        <p class="p1" style="margin: 0px; color: #fff; font-size: 12px">
+          Amazon Music
+        </p>
+        <p
+          class="p1"
+          style="
+            width: 80%;
+            margin: 0px;
+            color: #999;
+            font-weight: 0.8;
+            font-size: 10px;
+          "
+        >
+          Stream millions of songs
+        </p>
+      </div>
+    </div>
+    <p
+      style="
+        text-align: center;
+        margin: 0px auto 2rem;
+        letter-spacing: 2;
+        color: #fff;
+        font-size: 12px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      "
+    >
+      Made with
+      <nb-icon
+        [options]="{ animation: { type: 'pulse' } }"
+        style="
+          color: #fff;
+          margin: 0 10px;
+          height: 1.2rem;
+          width: 1.2rem;
+          cursor: pointer;
+        "
+        icon="heart"
+      ></nb-icon>
+      by Sai Ashish
+    </p>
+    <div style="height: 1rem"></div>
+  </div>
+</div>

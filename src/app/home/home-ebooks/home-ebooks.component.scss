@@ -1,0 +1,26 @@
+.container {
+  width: 100%;
+  min-height: 18vh;
+  background-color: #fff;
+  padding: 6vh 0 0;
+}
+
+p{
+    font-size: 18px;
+    font-weight: 550;
+}
+
+
+.btn {
+  margin: 0.7rem auto;
+  padding: 10px 2rem;
+  background: linear-gradient(#f5d588, #f0c14b);
+  border: 0.2px solid black;
+  outline: none;
+  cursor: pointer;
+  &:active {
+    box-shadow: 1px 1px  1px 1px orange;
+    border: 1px solid orange;
+    background: #f0c14b;
+  }
+}

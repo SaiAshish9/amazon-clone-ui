@@ -13,21 +13,28 @@
         [title]="'Top Beauty & Personal Care products'"
       >
       </app-home-products-slider>
+      <app-categories-bottom></app-categories-bottom>
       <app-home-products-slider
-      [fn]="fetchData('Must have Wireless products')"
+        [fn]="fetchData('Must have Wireless products')"
       ></app-home-products-slider>
       <app-home-products-slider
-      [fn]="fetchData('Stuffed Animals & Toys under $10')"
+        [fn]="fetchData('Stuffed Animals & Toys under $10')"
       ></app-home-products-slider>
       <app-home-products-slider
-      [fn]="fetchData('Best Sellers in Baby')"
+        [fn]="fetchData('Best Sellers in Baby')"
       ></app-home-products-slider>
       <app-home-products-slider
-      [fn]="fetchData('Our favorite Toys')"
+        [fn]="fetchData('Our favorite Toys')"
       ></app-home-products-slider>
       <app-home-products-slider
-      [fn]="fetchData('Home Décor Under $20')"
+        [fn]="fetchData('Home Décor Under $20')"
       ></app-home-products-slider>
     </div>
   </div>
+  <div style="position: relative; top: 2rem">
+    <app-home-ebooks></app-home-ebooks>
+    <app-back-to-top></app-back-to-top>
+  </div>
+
+  <app-footer></app-footer>
 </div>

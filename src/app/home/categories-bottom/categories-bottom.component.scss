@@ -1,0 +1,25 @@
+.container{
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.link {
+    color: #0d7387;
+    margin-top: 10px;
+    &:hover {
+      color: #c85050;
+      text-decoration: underline;
+    }
+  }
+  
+  .card {
+    height: 25rem;
+    width: 20.5rem;
+    background-color: white;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }

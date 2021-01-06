@@ -1,0 +1,18 @@
+div {
+  height: 5vh;
+  width: 100%;
+  background-color: #38475a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+p {
+  color: #fff;
+  margin: 0px;
+  font-weight: 550;
+}

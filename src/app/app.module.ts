@@ -1,3 +1,7 @@
+import { FooterComponent } from './footer/footer.component';
+import { BackToTopComponent } from './back-to-top/back-to-top.component';
+import { HomeEbooksComponent } from './home/home-ebooks/home-ebooks.component';
+import { CategoriesBottomComponent } from './home/categories-bottom/categories-bottom.component';
 import { HomeProductsSliderComponent } from './home/home-products-slider/home-products-slider.component';
 import { HomeDiscoverComponent } from './home/home-discover/home-discover.component';
 import { SearchComponent } from './home/search/search.component';
@@ -28,7 +32,11 @@ import { NbIconModule } from '@nebular/theme';
     HomeTagComponent,
     HomeDiscoverComponent,
     SearchComponent,
+    CategoriesBottomComponent,
+    HomeEbooksComponent,
     HomeProductsSliderComponent,
+    BackToTopComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,14 @@
+<div class="container">
+  <div
+    class="card"
+    *ngFor="
+      let x of categories | slice: categories.length - 4:categories.length
+    "
+  >
+    <p class="title">{{ x.title }}</p>
+    <img [src]="x.imageUrl" alt="img" style="height: 80%; width: 100%" />
+    <a class="link" routerLink="/">
+      {{ x.descAvailable ? "See more" : "Shop now" }}
+    </a>
+  </div>
+</div>
