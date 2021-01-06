@@ -1,0 +1,47 @@
+<div class="container" (mouseover)="focus()" (mouseleave)="leave()">
+    <div style="display: flex">
+      <p class="title">{{title}}</p>
+      <p class="link" routerLink="/">{{link}}</p>
+    </div>
+    <div
+      *ngIf="data.length > 0"
+      style="
+        display: flex;
+        margin-top: 1rem;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+      "
+    >
+      <div *ngIf="hovered" (click)="scrollLeft()" class="arrow-left">
+        <mat-icon
+          style="position: relative; right: 3px; font-size: 2rem; color: #999"
+          >keyboard_arrow_left</mat-icon
+        >
+      </div>
+      <div
+        class="scroll"
+        #scroll
+        style="
+          width: 96%;
+          height: 100%;
+          margin: 0 auto;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: nowrap;
+          padding-bottom: 1rem;
+          position: relative;
+        "
+      >
+        <img *ngFor="let x of data" [src]="x" alt="img" />
+      </div>
+      <div *ngIf="hovered" (click)="scrollRight()" class="arrow-right">
+        <mat-icon
+          style="position: relative; right: 3px; font-size: 2rem; color: #999"
+          >keyboard_arrow_right</mat-icon
+        >
+      </div>
+    </div>
+  </div>
+  

@@ -1,3 +1,5 @@
+import { HomeProductsSliderComponent } from './home/home-products-slider/home-products-slider.component';
+import { HomeDiscoverComponent } from './home/home-discover/home-discover.component';
 import { SearchComponent } from './home/search/search.component';
 import { HomeTagComponent } from './home/home-tag/home-tag.component';
 import { HomeCategoriesComponent } from './home/categories/categories.component';
@@ -24,7 +26,9 @@ import { NbIconModule } from '@nebular/theme';
     NavbarComponent,
     HomeCategoriesComponent,
     HomeTagComponent,
-    SearchComponent
+    HomeDiscoverComponent,
+    SearchComponent,
+    HomeProductsSliderComponent,
   ],
   imports: [
     BrowserModule,

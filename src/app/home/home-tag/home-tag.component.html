@@ -8,7 +8,9 @@
     top:0
   "
 >
-  <nz-carousel [nzDots]="false" #carousel>
+  <nz-carousel nzAutoPlay 
+  [nzEnableSwipe]="false"
+  [nzDots]="false" #carousel>
     <img
       nz-carousel-content
       class="container"

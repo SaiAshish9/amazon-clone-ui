@@ -2,5 +2,32 @@
   <div class="main">
     <app-home-tag></app-home-tag>
     <app-categories></app-categories>
+    <div style="padding: 1rem">
+      <app-home-discover></app-home-discover>
+      <app-home-products-slider
+        [fn]="fetchSellers()"
+        [title]="'Amazon Top Sellers'"
+      ></app-home-products-slider>
+      <app-home-products-slider
+        [fn]="fetchCareProducts()"
+        [title]="'Top Beauty & Personal Care products'"
+      >
+      </app-home-products-slider>
+      <app-home-products-slider
+      [fn]="fetchData('Must have Wireless products')"
+      ></app-home-products-slider>
+      <app-home-products-slider
+      [fn]="fetchData('Stuffed Animals & Toys under $10')"
+      ></app-home-products-slider>
+      <app-home-products-slider
+      [fn]="fetchData('Best Sellers in Baby')"
+      ></app-home-products-slider>
+      <app-home-products-slider
+      [fn]="fetchData('Our favorite Toys')"
+      ></app-home-products-slider>
+      <app-home-products-slider
+      [fn]="fetchData('Home Décor Under $20')"
+      ></app-home-products-slider>
+    </div>
   </div>
 </div>

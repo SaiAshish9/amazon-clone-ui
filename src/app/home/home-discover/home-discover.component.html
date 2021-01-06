@@ -1,0 +1,46 @@
+<div class="container" (mouseover)="focus()" (mouseleave)="leave()">
+  <div style="display: flex">
+    <p class="title">Discover Amazon</p>
+    <p class="link" routerLink="/">Click to learn more</p>
+  </div>
+  <div
+    *ngIf="data.length > 0"
+    (mouseover)="toggleFocus()"
+    style="
+      display: flex;
+      margin-top: 1rem;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+    "
+  >
+    <div (click)="scrollLeft()" class="arrow-left">
+      <mat-icon
+        style="position: relative; right: 3px; font-size: 2rem; color: #999"
+        >keyboard_arrow_left</mat-icon
+      >
+    </div>
+    <div
+      class="scroll"
+      #scroll
+      style="
+        width: 95%;
+        height: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+      "
+    >
+      <img *ngFor="let x of data" [src]="x.url" alt="img" />
+    </div>
+    <div (click)="scrollRight()" class="arrow-right">
+      <mat-icon
+        style="position: relative; right: 3px; font-size: 2rem; color: #999"
+        >keyboard_arrow_right</mat-icon
+      >
+    </div>
+  </div>
+</div>
