@@ -1,0 +1,75 @@
+<div class="container">
+  <img
+    class="logo"
+    style="height: 5vh; padding: 5px"
+    src="../assets/logo-w.png"
+    alt="img"
+  />
+  <div class="card">
+    <p class="heading">Sign-In</p>
+    <p class="label">Email or mobile phone number</p>
+    <form #f="ngForm">
+      <input
+        style="outline: none; box-shadow: none; border: 2px solid #cd3f55"
+        required
+        #email="ngModel"
+        type="email"
+        ngModel
+      />
+      <p class="label" style="margin: 4px 0; font: size 12px; color: #cd3f55">
+        !
+        Enter your email or mobile phone number
+      </p>
+      <p class="label">Password</p>
+      <input required #email="ngModel" type="email" ngModel />
+      <button routerLink="signin" class="btn">Continue</button>
+    </form>
+
+    <p class="tag">
+      By continuing, you agree to Amazon's
+      <span class="link">Conditions of Use</span> and
+      <span class="link">Privacy Notice.</span>
+    </p>
+  </div>
+
+  <div style="width: 22rem">
+    <div
+      style="
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 1rem;
+      "
+    >
+      <div style="height: 1px; width: 35%; background: #dddddd"></div>
+      <p style="color: #a29d9e; font-size: 12px; font-weight: 550; margin: 0">
+        New to Amazon?
+      </p>
+      <div style="height: 1px; width: 35%; background: #dddddd"></div>
+      <div style="height: 1px; background: #a29d9e"></div>
+    </div>
+
+    <button routerLink="signin" class="btn1">Create your Amazon account</button>
+  </div>
+
+  <div
+    style="width: 70vw; height: 2px; margin: 2rem 0; background-color: #f8f8f8"
+  ></div>
+
+  <div
+    style="
+      margin: 0;
+      width: 15rem;
+      display: flex;
+      justify-content: space-between;
+    "
+  >
+    <p class="link" style="font-size: 12px">Conditions of Use</p>
+    <p class="link" style="font-size: 12px">Privacy Notice</p>
+    <p class="link" style="font-size: 12px">Help</p>
+  </div>
+  <p style="font-size: 10px; color: #6b6461; margin: 0">
+    © 1996-2020, Amazon.com, Inc. or its affiliates
+  </p>
+</div>

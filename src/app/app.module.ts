@@ -1,3 +1,5 @@
+import { SignupComponent } from './signup/signup.component';
+import { SigninComponent } from './signin/signin.component';
 import { FooterComponent } from './footer/footer.component';
 import { BackToTopComponent } from './back-to-top/back-to-top.component';
 import { HomeEbooksComponent } from './home/home-ebooks/home-ebooks.component';
@@ -21,6 +23,7 @@ import { NzCarouselModule } from 'ng-zorro-antd/carousel';
 import { NbThemeModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { NbIconModule } from '@nebular/theme';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -36,12 +39,15 @@ import { NbIconModule } from '@nebular/theme';
     HomeEbooksComponent,
     HomeProductsSliderComponent,
     BackToTopComponent,
-    FooterComponent
+    FooterComponent,
+    SigninComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    FormsModule,
     MaterialModule,
     BrowserAnimationsModule,
     NzCarouselModule,

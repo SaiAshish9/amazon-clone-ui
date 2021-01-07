@@ -1,3 +1,5 @@
-<app-navbar></app-navbar>
-<app-menubar></app-menubar>
-<app-home></app-home>
+<ng-container *ngIf="isNav()">
+  <app-navbar></app-navbar>
+  <app-menubar></app-menubar>
+</ng-container>
+<router-outlet></router-outlet>
