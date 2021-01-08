@@ -16,13 +16,12 @@
   }
 }
 
-
 .card {
   width: 22rem;
   min-height: 30vh;
   border-radius: 2px;
   border: 1px solid #dddddd;
-  padding: 2rem 2rem 1rem ;
+  padding: 2rem 2rem 1rem;
   display: flex;
   flex-direction: column;
 }
@@ -31,7 +30,7 @@
   font-size: 1.8rem;
 }
 
-.tag{
+.tag {
   font-size: 12px;
 }
 
@@ -53,13 +52,13 @@
   outline: none;
   cursor: pointer;
   &:active {
-    box-shadow: 1px 1px  1px 1px orange;
+    box-shadow: 1px 1px 1px 1px orange;
     border: 1px solid orange;
     background: #f0c14b;
   }
 }
 
-.btn1{
+.btn1 {
   padding: 9px 0;
   width: 100%;
   margin: 1rem 0;
@@ -69,12 +68,13 @@
   font-size: 13px;
   outline: none;
   cursor: pointer;
-  &:active,&:hover {
+  &:active,
+  &:hover {
     opacity: 0.8;
   }
 }
 
-input {
+.inp {
   width: 100%;
   border: 1px solid #949494;
   outline: none !important;
@@ -88,4 +88,16 @@ input {
     outline: none;
     box-shadow: 0px 0px 10px #f8d6b7;
   }
+}
+
+.inp1 {
+  width: 100%;
+  margin: 0px;
+  height: 2rem;
+  border-radius: 3px;
+  font-size: 16px;
+  padding: 0 10px;
+  outline: none;
+  box-shadow: none;
+  border: 2px solid #cd3f55;
 }

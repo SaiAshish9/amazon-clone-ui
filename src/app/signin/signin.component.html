@@ -7,22 +7,56 @@
   />
   <div class="card">
     <p class="heading">Sign-In</p>
-    <p class="label">Email or mobile phone number</p>
-    <form #f="ngForm">
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+      <p 
+      *ngIf="error_msg"
+      class="label" style="margin: 4px 0; font: size 12px; color: #cd3f55">
+        {{ error_msg }}
+      </p>
+
+      <p class="label">Email or mobile phone number</p>
+
       <input
-        style="outline: none; box-shadow: none; border: 2px solid #cd3f55"
+        [ngClass]="!email.valid && email.touched ? 'inp1' : 'inp'"
         required
-        #email="ngModel"
-        type="email"
+        [(ngModel)]="emailorpn"
         ngModel
+        #email="ngModel"
+        name="email"
       />
-      <p class="label" style="margin: 4px 0; font: size 12px; color: #cd3f55">
-        !
-        Enter your email or mobile phone number
+      <p
+        *ngIf="email.invalid && email.touched && email.errors.required"
+        class="label"
+        style="margin: 4px 0; font: size 12px; color: #cd3f55"
+      >
+        ! Enter your email or mobile phone number
       </p>
       <p class="label">Password</p>
-      <input required #email="ngModel" type="email" ngModel />
-      <button routerLink="signin" class="btn">Continue</button>
+      <input
+        name="password"
+        ngModel
+        #pass="ngModel"
+        [ngClass]="!pass.valid && pass.touched ? 'inp1' : 'inp'"
+        [(ngModel)]="password"
+        required
+        minlength="6"
+        type="password"
+      />
+      <p
+        *ngIf="pass.invalid && pass.touched && pass.errors.required"
+        class="label"
+        style="margin: 4px 0; font: size 12px; color: #cd3f55"
+      >
+        ! Enter your password
+      </p>
+      <p
+        *ngIf="pass.invalid && pass.touched && pass.errors.minlength"
+        class="label"
+        style="margin: 4px 0; font: size 12px; color: #cd3f55"
+      >
+        ! Passwords must be at least 6 characters.
+      </p>
+      <button class="btn">Continue</button>
     </form>
 
     <p class="tag">
@@ -50,7 +84,8 @@
       <div style="height: 1px; background: #a29d9e"></div>
     </div>
 
-    <button routerLink="signin" class="btn1">Create your Amazon account</button>
+    <button
+     routerLink="/register" class="btn1">Create your Amazon account</button>
   </div>
 
   <div

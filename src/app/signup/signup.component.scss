@@ -1,0 +1,108 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1rem 0.8rem 0;
+  }
+  
+  .link {
+    color: #3293e3;
+    cursor: pointer;
+    margin-top: 10px;
+    &:hover {
+      color: #c85050;
+      text-decoration: underline;
+    }
+  }
+  
+  .card {
+    width: 22rem;
+    min-height: 30vh;
+    border-radius: 2px;
+    border: 1px solid #dddddd;
+    padding: 2rem 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .heading {
+    font-size: 1.8rem;
+  }
+  
+  .tag {
+    font-size: 12px;
+  }
+  
+  .label {
+    font-size: 13px;
+    font-weight: 550;
+    letter-spacing: 2;
+    margin-top: 0.6rem;
+    margin-bottom: 5px;
+  }
+  
+  .btn {
+    padding: 8px 0;
+    background: linear-gradient(#f5d588, #f0c14b);
+    width: 100%;
+    margin: 1rem 0;
+    font-size: 13px;
+    border: 0.2px solid #999;
+    outline: none;
+    cursor: pointer;
+    &:active {
+      box-shadow: 1px 1px 1px 1px orange;
+      border: 1px solid orange;
+      background: #f0c14b;
+    }
+  }
+  
+  .btn1 {
+    padding: 9px 0;
+    width: 100%;
+    margin: 1rem 0;
+    border-radius: 3px;
+    outline: none;
+    border: 1px solid #999;
+    font-size: 13px;
+    outline: none;
+    cursor: pointer;
+    &:active,
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  
+  .inp {
+    width: 100%;
+    border: 1px solid #949494;
+    outline: none !important;
+    margin: 0px;
+    height: 2rem;
+    border-radius: 3px;
+    font-size: 16px;
+    padding: 0 10px;
+    &:focus {
+      border: 2px solid #fdc375;
+      outline: none;
+      box-shadow: 0px 0px 10px #f8d6b7;
+    }
+  }
+  
+  ::placeholder{
+    font-size: 12px;
+  }
+
+  .inp1 {
+    width: 100%;
+    margin: 0px;
+    height: 2rem;
+    border-radius: 3px;
+    font-size: 16px;
+    padding: 0 10px;
+    outline: none;
+    box-shadow: none;
+    border: 2px solid #cd3f55;
+  }
+  

@@ -1,1 +1,159 @@
-<p>signup works!</p>
+<div class="container">
+  <img
+    class="logo"
+    style="height: 5vh; padding: 5px"
+    src="../assets/logo-w.png"
+    alt="img"
+  />
+  <div class="card">
+    <p class="heading">Create account</p>
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+      <p
+        *ngIf="error_msg"
+        class="label"
+        style="margin: 4px 0; font: size 12px; color: #cd3f55"
+      >
+        {{ error_msg }}
+      </p>
+
+      <p class="label">Your name</p>
+
+      <input
+        [ngClass]="!name.valid && name.touched ? 'inp1' : 'inp'"
+        required
+        ngModel
+        name="name"
+        #name="ngModel"
+        type="text"
+      />
+
+      <p
+        *ngIf="name.invalid && name.touched && name.errors.required"
+        class="label"
+        style="margin: 4px 0; font: size 12px; color: #cd3f55"
+      >
+        ! Enter your name
+      </p>
+
+      <p class="label">Email</p>
+
+      <input
+        [ngClass]="!email.valid && email.touched ? 'inp1' : 'inp'"
+        required
+        ngModel
+        #email="ngModel"
+        name="email"
+        type="email"
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+      />
+      <p
+        *ngIf="email.invalid && email.touched && email.errors.required"
+        class="label"
+        style="margin: 4px 0; font: size 12px; color: #cd3f55"
+      >
+        ! Enter your email
+      </p>
+      <p
+        *ngIf="email.invalid && email.touched && email.errors.pattern"
+        class="label"
+        style="margin: 4px 0; font: size 12px; color: #cd3f55"
+      >
+        ! Enter valid email
+      </p>
+      <p class="label">Password</p>
+      <input
+        name="password"
+        ngModel
+        placeholder="At least 6 characters."
+        #pass="ngModel"
+        [ngClass]="!pass.valid && pass.touched ? 'inp1' : 'inp'"
+        required
+        minlength="6"
+        type="password"
+      />
+      <p
+        *ngIf="!pass.valid"
+        class="label"
+        style="font-weight: 400; margin: 2px; font-size: 12px"
+      >
+        ! Passwords must be at least 6 characters.
+      </p>
+      <p
+        *ngIf="pass.invalid && pass.touched && pass.errors.required"
+        class="label"
+        style="margin: 4px 0; font: size 12px; color: #cd3f55"
+      >
+        ! Enter your password
+      </p>
+      <p
+        *ngIf="pass.invalid && pass.touched && pass.errors.minlength"
+        class="label"
+        style="margin: 4px 0; font: size 12px; color: #cd3f55"
+      >
+        ! Passwords must be at least 6 characters.
+      </p>
+      <p class="label">Re-enter Password</p>
+      <input
+        name="confirmpassword"
+        ngModel
+        #pass1="ngModel"
+        [ngClass]="!pass1.valid && pass1.touched ? 'inp1' : 'inp'"
+        required
+        minlength="6"
+        type="password"
+      />
+      <p
+        *ngIf="pass.value !== pass1.value && pass1.touched"
+        class="label"
+        style="margin: 4px 0; font: size 12px; color: #cd3f55"
+      >
+        ! Both passwords doesn't match
+      </p>
+      <button class="btn">Create your Amazon account</button>
+    </form>
+
+    <p class="tag">
+      By continuing, you agree to Amazon's
+      <span class="link">Conditions of Use</span> and
+      <span class="link">Privacy Notice.</span>
+    </p>
+
+    <div
+      style="
+        width: 100%;
+        height: 2px;
+        margin: 1rem 0;
+        background-color: #f8f8f8;
+      "
+    ></div>
+
+    <p class="tag">
+        Already have an account?
+      <span 
+      routerLink="/signin"
+      class="link"
+      style="border:none;outline:none"
+      >Sign-In</span> 
+    </p>
+  </div>
+
+  <div
+    style="width: 70vw; height: 2px; margin: 2rem 0; background-color: #f8f8f8"
+  ></div>
+
+  <div
+    style="
+      margin: 0;
+      width: 15rem;
+      display: flex;
+      justify-content: space-between;
+    "
+  >
+    <p class="link" style="font-size: 12px">Conditions of Use</p>
+    <p class="link" style="font-size: 12px">Privacy Notice</p>
+    <p class="link" style="font-size: 12px">Help</p>
+  </div>
+  <p style="font-size: 10px; color: #6b6461; margin: 0">
+    © 1996-2020, Amazon.com, Inc. or its affiliates
+  </p>
+</div>
