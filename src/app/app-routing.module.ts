@@ -1,3 +1,4 @@
+import { RouteGuardService } from './services/route-guard.service';
 import { SignupComponent } from './signup/signup.component';
 import { SigninComponent } from './signin/signin.component';
 import { HomeComponent } from './home/home.component';
@@ -16,11 +17,13 @@ const routes: Routes = [
     children:[{
       path:':id',
       component:SigninComponent
-    }]
+    }],
+    canActivate: [RouteGuardService],
   },
   {
     path:'register',
-    component:SignupComponent
+    component:SignupComponent,
+    canActivate: [RouteGuardService],
   },
   {
     path:'**',

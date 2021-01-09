@@ -1,5 +1,7 @@
+import { CookieService } from 'ngx-cookie-service';
+import { HomedetailsService } from 'src/app/services/homedetails.service';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute} from '@angular/router';
+import { ActivatedRoute,Router } from '@angular/router';
 
 @Component({
   selector: 'app-signin',
@@ -7,14 +9,17 @@ import { ActivatedRoute} from '@angular/router';
   styleUrls: ['./signin.component.scss'],
 })
 export class SigninComponent implements OnInit {
-  constructor(private route: ActivatedRoute) {
-   
-  }
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private service: HomedetailsService,
+    private cookieService:CookieService
+  ) {}
 
   ngOnInit(): void {
     this.route.params.subscribe(
       (params) => {
-          this.emailorpn = decodeURIComponent(params['id'])
+        if (params['id']) this.emailorpn = decodeURIComponent(params['id']);
       },
       (err) => {}
     );
@@ -25,8 +30,16 @@ export class SigninComponent implements OnInit {
   error_msg;
 
   onSubmit(f) {
-    console.log(f.value);
-    this.error_msg = 'Invalid Credentials';
-    f.reset();
+    this.service.authenticate(this.emailorpn, this.password).subscribe(
+      (data:any) => {
+        this.cookieService.set('token',data.token);
+        this.router.navigate(['/']);
+        f.reset();
+      },
+      (err) => {
+        console.log(err);
+        this.error_msg = 'Invalid Credentials';
+      }
+    );
   }
 }

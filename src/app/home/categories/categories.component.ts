@@ -1,3 +1,4 @@
+import { CookieService } from 'ngx-cookie-service';
 import { Component, OnInit } from '@angular/core';
 import { HomedetailsService } from 'src/app/services/homedetails.service';
 
@@ -8,9 +9,15 @@ import { HomedetailsService } from 'src/app/services/homedetails.service';
 })
 export class HomeCategoriesComponent implements OnInit {
 
-  constructor(private homeDS:HomedetailsService) { }
+  constructor(private homeDS:HomedetailsService,private cookieService:CookieService) { }
 
   categories:any[]=[];
+
+  name
+
+  recommendations:any=[]
+
+
 
   ngOnInit(): void {
     this.homeDS.fetchCategories().subscribe((data:any)=>{
@@ -18,6 +25,23 @@ export class HomeCategoriesComponent implements OnInit {
     },err=>{
       console.log(err)
     })
+    this.homeDS.getUsername(this.cookieService.get('token')).subscribe(
+      (data: any) => {
+        this.name = data.username;
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+    if(this.isLoggedIn()){
+      this.homeDS.fetchRecommendations().subscribe((data:any)=>{
+        this.recommendations=data
+      })
+    }
+  }
+
+  isLoggedIn(){
+    return this.homeDS.isLoggedIn()
   }
 
 

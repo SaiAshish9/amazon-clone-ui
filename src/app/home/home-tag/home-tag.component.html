@@ -5,12 +5,20 @@
     overflow: hidden;
     position: absolute;
     z-index: 0;
-    top:0
+    top: 0;
   "
 >
-  <nz-carousel nzAutoPlay 
-  [nzEnableSwipe]="false"
-  [nzDots]="false" #carousel>
+  <nz-carousel nzAutoPlay [nzEnableSwipe]="false" [nzDots]="false" #carousel>
+    <!-- <mat-icon
+    (click)="prev()"
+    style="
+      cursor: pointer;
+      font-size: 3rem;
+      font-weight: lighter;
+      color: #fff;
+    "
+    >arrow_back_ios</mat-icon
+  > -->
     <img
       nz-carousel-content
       class="container"
@@ -18,22 +26,7 @@
       [src]="i"
       alt="img"
     />
-  </nz-carousel>
-</div>
-<!-- nzAutoPlay -->
-<div style="position: relative; z-index: 1; width: 100%; padding: 0 2rem;margin: 13vh 0 12vh;">
-  <div class="row">
-    <mat-icon
-      (click)="prev()"
-      style="
-        cursor: pointer;
-        font-size: 3rem;
-        font-weight: lighter;
-        color: #fff;
-      "
-      >arrow_back_ios</mat-icon
-    >
-    <mat-icon
+    <!-- <mat-icon
       (click)="next()"
       style="
         cursor: pointer;
@@ -42,7 +35,38 @@
         color: #fff;
       "
       >arrow_forward_ios</mat-icon
-    >
+    > -->
+  </nz-carousel>
+</div>
+<!-- nzAutoPlay -->
+<div
+  style="
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding: 0 2rem;
+    margin: 13vh 0 12vh;
+  "
+>
+  <div class="row">
+    <img
+      (click)="prev()"
+      alt="img"
+      src="https://assets.stickpng.com/thumbs/580b57fcd9996e24bc43c43e.png"
+      style="
+        cursor: pointer;
+        width: 2rem;
+        font-weight: lighter;
+        transform: rotate(180deg);
+        color: #fff;
+      "
+    />
+    <img
+      (click)="next()"
+      src="https://assets.stickpng.com/thumbs/580b57fcd9996e24bc43c43e.png"
+      alt="img"
+      style="cursor: pointer; width: 2rem; font-weight: lighter; color: #fff"
+    />
   </div>
 </div>
 
