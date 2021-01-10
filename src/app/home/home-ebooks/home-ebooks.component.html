@@ -10,6 +10,18 @@
     "
   >
     <p>Best sellers in Kindle eBooks</p>
-    <button class="btn">Sign in to see personalized recommendations</button>
+    <button
+    routerLink="signin"
+    *ngIf="!isLoggedIn(); else slider" class="btn">
+      Sign in to see personalized recommendations
+    </button>
   </div>
+  <ng-template #slider>
+    <div style="width: 100%;height: 27vh;">
+      <app-home-products-slider
+        [fn]="fetchData('Best sellers in Kindle eBooks')"
+        [displayTag]="false"
+      ></app-home-products-slider>
+    </div>
+  </ng-template>
 </div>

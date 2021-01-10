@@ -32,7 +32,7 @@
   </div>
   <!-- right -->
 
-  <div style="width: 60%; padding: 12px 10px;height: 7vh">
+  <div style="width: 60%; padding: 12px 10px; height: 7vh">
     <app-search></app-search>
   </div>
 
@@ -47,6 +47,8 @@
     </div>
     <div
       class="border"
+      (mouseover)="hovered = true"
+      (mouseleave)="hovered = false"
       style="
         align-items: flex-end;
         display: flex;
@@ -55,10 +57,104 @@
       "
     >
       <div>
-        <p class="title" style="font-size: 12; opacity: 0.8">Hello, {{name}}</p>
+        <p class="title" style="font-size: 12; opacity: 0.8">
+          Hello, {{ name }}
+        </p>
         <p class="title">Accounts & Lists</p>
       </div>
       <mat-icon style="color: #a7acb2">arrow_drop_down</mat-icon>
+      <div
+        *ngIf="hovered"
+        (mouseover)="hovered = true"
+        (mouseleave)="hovered = false"
+        style="
+          cursor: pointer;
+          position: absolute;
+          width: 30rem;
+          min-height: 21rem;
+          top: 6vh;
+          right: 7vw;
+          z-index: 30;
+          background-color: #fff;
+          border-radius: 7px;
+          padding: 1rem;
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+        "
+      >
+        <button
+          *ngIf="!isLoggedIn()"
+          style="padding: 8px 0; width: 45%"
+          routerLink="signin"
+          class="btn"
+        >
+          Sign in
+        </button>
+        <p
+          *ngIf="!isLoggedIn()"
+          style="font-size: 12px; margin-top: 5px; margin-bottom: 0px"
+        >
+          New customer?
+          <span><a routerLink="signin" class="link">Start here.</a></span>
+        </p>
+        <div *ngIf="!isLoggedIn()" style="width: 100%; margin: 5px 0">
+          <mat-divider></mat-divider>
+        </div>
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            height: 100%;
+          "
+        >
+          <div style="width: 47%; height: 100%">
+            <p class="title1" style="font-size: 0.9rem; margin-top: 1rem">
+              Your Lists
+            </p>
+            <div style="display: flex; flex-direction: column">
+              <a *ngFor="let x of lists" class="link1" routerLink="signin">
+                {{ x }}
+              </a>
+            </div>
+          </div>
+          <div
+            style="
+              margin: 10px 10px 10px 0;
+              min-height: 19rem;
+              width: 1%;
+              border-right: 1px solid #eee;
+            "
+          ></div>
+          <!-- <mat-divider [vertical]="true"></mat-divider> -->
+          <div style="width: 47%; height: 100%">
+            <p class="title1" style="font-size: 0.9rem; margin-top: 1rem">
+              Your Account
+            </p>
+            <div style="display: flex; flex-direction: column">
+              <a *ngFor="let x of accounts" class="link1" routerLink="signin">
+                {{ x }}
+              </a>
+              <a *ngIf="isLoggedIn()" class="link1"> Switch Accounts </a>
+              <a *ngIf="isLoggedIn()" (click)="signOut()" class="link1">
+                Sign Out</a
+              >
+            </div>
+          </div>
+        </div>
+        <nb-icon
+          icon="arrow-up"
+          style="
+            width: 2rem;
+            height: 2rem;
+            position: absolute;
+            right: 16.65%;
+            top: -4.5%;
+            color: #fff;
+          "
+        ></nb-icon>
+      </div>
     </div>
     <div
       class="border"
@@ -106,11 +202,120 @@
             left: -3px;
             z-index: 20;
           "
-          >{{count}}</span
+          >{{ count }}</span
         >
         <br />
         Cart
       </p>
     </div>
   </div>
+</div>
+
+<div [ngClass]="hovered ? 'overlay' : ''"></div>
+
+<div class="mcontainer" style="overflow-x: hidden">
+  <div class="mnav">
+    <div class="row">
+      <mat-icon style="color: #fff">menu</mat-icon>
+      <img
+        class="logo"
+        style="height: 3rem; padding: 5px"
+        src="../assets/logo.png"
+        alt="img"
+      />
+    </div>
+
+    <div
+      style="
+        align-items: flex-end;
+        display: flex;
+        justify-content: space-between;
+      "
+    >
+      <p
+        routerLink="/signin"
+        style="
+          outline: none;
+          color: #fff;
+          margin: 0;
+          align-self: center;
+          margin-right: 5px;
+        "
+      >
+        Sign In
+      </p>
+      <nb-icon
+        [options]="{ animation: { type: 'pulse' } }"
+        style="
+          position: relative;
+          z-index: 1;
+          color: #fff;
+          height: 2rem;
+          width: 2rem;
+          cursor: pointer;
+        "
+        icon="shopping-cart-outline"
+      ></nb-icon>
+      <p class="title">
+        <span
+          style="
+            color: #c35634;
+            font-size: 18px;
+            position: relative;
+            bottom: 15px;
+            z-index: 20;
+          "
+          >{{ count }}</span
+        >
+      </p>
+    </div>
+  </div>
+  <div style="width: 100%; min-height: 2.7rem; height: 6.5vh; margin: 10px 0 5px">
+    <app-search hideDropDown></app-search>
+  </div>
+  <div
+    style="
+      overflow-x: scroll;
+      display: flex;
+      align-items: center;
+      flex-wrap: nowrap;
+    "
+  >
+    <p
+      style="
+        margin: 0px;
+        display: inline !important;
+        margin-right: 1rem;
+        margin-top: 0.8rem;
+        color: #fff;
+        max-width: 7rem;
+        white-space: nowrap;
+      "
+      *ngFor="let x of categories"
+    >
+      {{ x }}
+    </p>
+  </div>
+</div>
+
+<div
+  class="tag"
+  style="display: flex; align-items: center; justify-content: space-between"
+>
+  <div
+    style="display: flex; align-items: center; justify-content: space-between"
+  >
+    <mat-icon
+      class="material-icons-outlined"
+      style="color: #fff; align-self: flex-end; margin-right: 5px"
+      >room</mat-icon
+    >
+    <p style="color: #fff; margin: 0">Deliver to India</p>
+  </div>
+
+  <a
+    href="https://amazon-api-by-sai.herokuapp.com/"
+    style="color: #fff; margin: 0; outline: none"
+    >Spring API</a
+  >
 </div>

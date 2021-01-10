@@ -33,6 +33,14 @@ export class HomedetailsService {
     return this.http.get(BASE_URL + 'get-username?token='+token)
   }
 
+  getEmail(token){
+    return this.http.get(BASE_URL + 'get-email?token='+token)
+  }
+
+  fetchBestDeal(){
+    return this.http.get(this.PUBLIC_URL + 'best-deal')
+  }
+
   authenticate(email, password) {
     return this.http.post(BASE_URL + 'authenticate', {
       email,

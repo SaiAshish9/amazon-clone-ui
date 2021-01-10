@@ -25,6 +25,7 @@ export class HomeCategoriesComponent implements OnInit {
     },err=>{
       console.log(err)
     })
+    if(this.cookieService.check('token'))
     this.homeDS.getUsername(this.cookieService.get('token')).subscribe(
       (data: any) => {
         this.name = data.username;

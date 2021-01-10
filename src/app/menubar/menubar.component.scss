@@ -8,6 +8,13 @@
     justify-content: space-between;
 }
 
+
+@media only screen and (max-width:1000px){
+    .container{
+        display: none;
+    }
+}
+
 .title{
     color: #fff;
     margin: auto;

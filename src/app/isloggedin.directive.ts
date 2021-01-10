@@ -1,16 +1,15 @@
+import { CookieService } from 'ngx-cookie-service';
 import { Directive, ElementRef, Input } from '@angular/core';
 
 @Directive({
   selector: '[appIsloggedin]',
 })
 export class IsloggedinDirective {
-  constructor(el: ElementRef) {
-    if (this.hide&&this.hide.length>0) {
-      console.log(this.hide)
+  constructor(el: ElementRef,cookieService:CookieService) {
+      if(cookieService.check('token') && this.display=='false' )
       el.nativeElement.style.display = 'none';
-    }
   }
 
-  @Input('appIsloggedin') hide: string;
+  @Input('display') display:string;
 
 }

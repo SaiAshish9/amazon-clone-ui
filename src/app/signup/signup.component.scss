@@ -25,6 +25,16 @@
     display: flex;
     flex-direction: column;
   }
+
+  @media only screen and (max-width: 900px) {
+    .card,.cont{
+     width: 85vw;
+    }
+   
+    .edge{
+      width: 27%;
+    }
+   }
   
   .heading {
     font-size: 1.8rem;

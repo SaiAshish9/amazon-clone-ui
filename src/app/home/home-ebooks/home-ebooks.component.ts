@@ -1,3 +1,4 @@
+import { HomedetailsService } from 'src/app/services/homedetails.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeEbooksComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service:HomedetailsService,private homeDetailsService: HomedetailsService) { }
 
   ngOnInit(): void {
+  }
+
+  fetchData(x){
+    return this.homeDetailsService.fetchProducts(encodeURIComponent(x));
+  }
+
+
+  isLoggedIn(){
+    return this.service.isLoggedIn()
   }
 
 }

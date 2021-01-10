@@ -9,8 +9,9 @@ import { HomedetailsService } from '../services/homedetails.service';
 export class HomeComponent implements OnInit {
   constructor(private homeDetailsService: HomedetailsService) {}
 
-  
-  fetchData(x){
+  deal: any;
+
+  fetchData(x) {
     return this.homeDetailsService.fetchProducts(encodeURIComponent(x));
   }
 
@@ -18,9 +19,16 @@ export class HomeComponent implements OnInit {
     return this.fetchData('Amazon Top Sellers');
   }
 
-  fetchCareProducts(){
+  fetchCareProducts() {
     return this.fetchData('Top Beauty & Personal Care products');
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.homeDetailsService.fetchBestDeal().subscribe(
+      (data: any) => {
+        this.deal = data[0];
+      },
+      (err) => {}
+    );
+  }
 }

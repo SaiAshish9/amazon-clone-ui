@@ -16,6 +16,11 @@
   }
 }
 
+
+.cont{
+  width: 22rem;
+}
+
 .card {
   width: 22rem;
   min-height: 30vh;
@@ -24,6 +29,21 @@
   padding: 2rem 2rem 1rem;
   display: flex;
   flex-direction: column;
+}
+
+.edge{
+  width: 35%;
+}
+
+
+@media only screen and (max-width: 900px) {
+ .card,.cont{
+  width: 85vw;
+ }
+
+ .edge{
+   width: 27%;
+ }
 }
 
 .heading {

@@ -11,6 +11,7 @@ export class HomeProductsSliderComponent implements OnInit {
 
   data: any[] = [];
   hovered = false;
+  displayTag= false;
 
   @Input('fn') fn: any;
   @ViewChild('scroll') scrollbar;
@@ -20,6 +21,7 @@ export class HomeProductsSliderComponent implements OnInit {
   ngOnInit(): void {
     this.fn.subscribe(
       (data: any) => {
+        if(this.displayTag)
         this.title = data[0]['name'];
         this.data = data[0]['images'];
       },

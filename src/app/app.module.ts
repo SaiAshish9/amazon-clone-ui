@@ -27,6 +27,8 @@ import { NbIconModule } from '@nebular/theme';
 import { FormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { HeaderInterceptor } from "./services/HttpInterceptorBasicAuthService"
+import { NzPopoverModule } from 'ng-zorro-antd/popover';
+import { NzButtonModule } from 'ng-zorro-antd/button';
 
 @NgModule({
   declarations: [
@@ -58,6 +60,8 @@ import { HeaderInterceptor } from "./services/HttpInterceptorBasicAuthService"
     NbThemeModule.forRoot(),
     NbEvaIconsModule,
     NbIconModule,
+    NzPopoverModule,
+    NzButtonModule
   ],
   providers: [CookieService,  {
     provide: HTTP_INTERCEPTORS,
