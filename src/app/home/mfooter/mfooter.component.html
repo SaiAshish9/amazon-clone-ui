@@ -1,0 +1,116 @@
+<div
+  style="
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 2rem 1rem;
+    background-color: #232f3e;
+  "
+>
+  <div style="width: 50%">
+    <p style="color: #fff" *ngFor="let x of options | slice: 0:5">
+      {{ x }}
+    </p>
+  </div>
+  <div style="width: 50%">
+    <p style="color: #fff" *ngFor="let x of options | slice: 5:options.length">
+      {{ x }}
+    </p>
+  </div>
+</div>
+<div
+  style="
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 3rem 0 2rem;
+    background-color: #141722;
+  "
+>
+  <div
+    style="
+      margin-bottom: 1.3rem;
+      width: 50%;
+      display: flex;
+      justify-content: space-between;
+    "
+  >
+    <div style="display: flex; align-items: center">
+      <mat-icon
+        style="
+          height: 14px;
+          font-size: 14px;
+          margin: 0;
+          color: #fff;
+          opacity: 0.7;
+        "
+        >language</mat-icon
+      >
+      <p
+        style="
+          display: flex;
+          align-items: center;
+          margin: 0;
+          color: #fff;
+          opacity: 0.7;
+          font-size: 12px;
+        "
+      >
+        English
+      </p>
+    </div>
+
+    <p style="margin: 0; color: #fff; opacity: 0.7; font-size: 12px">
+      <span style="margin-right: 5px">$</span> USD-U.S.Dollar
+    </p>
+  </div>
+
+  <div style="display: flex; align-items: center">
+    <img
+      src="https://cdn.britannica.com/97/1597-004-05816F4E/Flag-India.jpg"
+      alt="img"
+      style="height: 1rem; margin-right: 10px"
+    />
+    <p style="margin: 0; color: #fff; opacity: 0.7">India</p>
+  </div>
+
+  <p
+    routerLink="signin"
+    style="outline: none; color: #fff; font-weight: 550; margin: 2rem 0 0rem"
+  >
+    Already a customer? Sign In
+  </p>
+
+  <div
+    style="
+      margin: 0;
+      margin-top: 1.5rem;
+      width: 15rem;
+      display: flex;
+      justify-content: space-between;
+    "
+  >
+    <p
+      class="link"
+      style="font-size: 12px; color: #fff; opacity: 0.8; margin: 0"
+    >
+      Conditions of Use
+    </p>
+    <p
+      class="link"
+      style="font-size: 12px; color: #fff; opacity: 0.8; margin: 0"
+    >
+      Privacy Notice
+    </p>
+    <p
+      class="link"
+      style="font-size: 12px; color: #fff; margin: 0; opacity: 0.8"
+    >
+      Help
+    </p>
+  </div>
+  <p style="font-size: 10px; color: #fff; margin: 0; opacity: 0.8">
+    © 1996-2020, Amazon.com, Inc. or its affiliates
+  </p>
+</div>

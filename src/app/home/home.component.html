@@ -40,67 +40,145 @@
 </div>
 
 <div class="mcontainer">
-  <img
-    style="width: 100%"
-    src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2021/NYNY/Karu_mHero_NYNY_en_US._SX828_CB412256578_.png"
-    alt="img"
-  />
-  <div style="height: 0.4rem; width: 100%; background-color: #d5dbdb"></div>
-  <img
-    style="width: 100%; min-height: 5.4rem"
-    src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Karu/2019/June/Karu_Marketplace_Stripe_IN_en_US_2._SX414_CB462059860_.jpg"
-    alt="img"
-  />
-  <div style="height: 0.4rem; width: 100%; background-color: #d5dbdb"></div>
-  <div style="padding: 1rem">
-    <p style="font-size: 1.2rem">Sign in for the best experience</p>
-    <button style="margin-bottom: 0.8rem" routerLink="signin" class="btn">
-      Sign in
-    </button>
-    <a style="margin-top: 1rem" class="link" routerLink="register"
-      >Create an account</a
-    >
-  </div>
-  <div style="height: 0.4rem; width: 100%; background-color: #d5dbdb"></div>
-  <img
-    src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Karu/2020/May/Hero/Karu_mHero_Home_v2_en_US._SX414_CB431436858_.jpg"
-    style="width: 100%"
-    alt="img"
-  />
-  <div style="height: 0.4rem; width: 100%; background-color: #d5dbdb"></div>
-  <img
-    src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Karu/2020/May/Hero/Karu_mHero_PC_v2_en_US._SX414_CB431272285_.jpg"
-    style="width: 100%"
-    alt="img"
-  />
-  <div style="height: 0.4rem; width: 100%; background-color: #d5dbdb"></div>
-  <div style="padding: 1rem">
-    <p style="font-size: 1.2rem">Deal of the Day</p>
-    <div style="display: flex; justify-content: center; margin: 2rem 0">
-      <img [src]="deal?.image" style="width: 50%; margin: auto" alt="img" />
+  <div>
+    <img
+      style="width: 100%"
+      src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2021/NYNY/Karu_mHero_NYNY_en_US._SX828_CB412256578_.png"
+      alt="img"
+    />
+    <div style="height: 0.4rem; width: 100%; background-color: #d5dbdb"></div>
+    <img
+      style="width: 100%; min-height: 5.4rem"
+      src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Karu/2019/June/Karu_Marketplace_Stripe_IN_en_US_2._SX414_CB462059860_.jpg"
+      alt="img"
+    />
+    <div style="height: 0.4rem; width: 100%; background-color: #d5dbdb"></div>
+    <div *ngIf="isLoggedIn(); else loggedInImage" style="padding: 1rem">
+      <p style="font-size: 1.2rem">Sign in for the best experience</p>
+      <button style="margin-bottom: 0.8rem" routerLink="signin" class="btn">
+        Sign in
+      </button>
+      <a style="margin-top: 1rem" class="link" routerLink="register"
+        >Create an account</a
+      >
     </div>
-    <p
+
+    <ng-template #loggedInImage>
+      <img
+        style="width: 100%"
+        src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Karu/2020/May/Hero/Karu_mHero_Sports_en_US._SX828_CB431864552_.jpg"
+        alt="img"
+      />
+    </ng-template>
+
+    <div style="height: 0.4rem; width: 100%; background-color: #d5dbdb"></div>
+    <img
+      src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Karu/2020/May/Hero/Karu_mHero_Toys_en_US._SX828_CB431859413_.jpg"
+      style="width: 100%"
+      alt="img"
+    />
+
+    <div style="height: 0.4rem; width: 100%; background-color: #d5dbdb"></div>
+    <img
+      src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Karu/2020/May/Hero/Karu_mHero_Home_v2_en_US._SX414_CB431436858_.jpg"
+      style="width: 100%"
+      alt="img"
+    />
+    <div style="height: 0.4rem; width: 100%; background-color: #d5dbdb"></div>
+    <img
+      src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Karu/2020/May/Hero/Karu_mHero_PC_v2_en_US._SX414_CB431272285_.jpg"
+      style="width: 100%"
+      alt="img"
+    />
+    <div style="height: 0.4rem; width: 100%; background-color: #d5dbdb"></div>
+    <div style="padding: 1rem">
+      <p style="font-size: 1.2rem">Deal of the Day</p>
+      <div style="display: flex; justify-content: center; margin: 2rem 0">
+        <img [src]="deal?.image" style="width: 50%; margin: auto" alt="img" />
+      </div>
+      <p id="description">
+        {{ deal?.description }}
+      </p>
+      <p style="font-weight: 550">
+        $ {{ deal?.minPrice }} - $ {{ deal?.maxPrice }}
+      </p>
+      <p style="font-weight: 550">Ends in</p>
+      <a style="margin-top: 1rem" class="link" routerLink="/">See all deals</a>
+    </div>
+    <div style="height: 0.4rem; width: 100%; background-color: #d5dbdb"></div>
+    <app-mobile-image-card
+      [fn]="fetchData('Stuffed Animals & Toys under $10')"
+    ></app-mobile-image-card>
+    <app-mobile-image-card
+      [fn]="fetchData('Our favorite Toys')"
+      showFour
+    ></app-mobile-image-card>
+    <app-mobile-image-card
+      [fn]="fetchData('Popular Gifts in Camera')"
+      showFour
+    ></app-mobile-image-card>
+    <app-mobile-image-card
+      [fn]="fetchData('Best Sellers in Baby')"
+    ></app-mobile-image-card>
+    <app-mobile-image-card
+      [fn]="fetchData('Home Décor Under $20')"
+    ></app-mobile-image-card>
+    <app-mobile-image-card
+      [fn]="fetchData('Girls’ everyday essentials')"
+      showFour
+    ></app-mobile-image-card>
+  </div>
+  <div
+    style="
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      background-color: #d5dbdb;
+      padding: 2px;
+    "
+  >
+    <div style="height: 1px; width: 20%; background: #999"></div>
+    <p style="font-size: 12px; margin: 0px">
+      You've reached the end. Keep exploring!
+    </p>
+    <div style="height: 1px; width: 20%; background: #999"></div>
+  </div>
+
+  <div style="padding: 1rem; width: 100%">
+    <p style="font-size: 1.2rem; margin-bottom: 1rem">Explore Departments</p>
+    <div
       style="
-        white-space: nowrap;
-        padding-right: 1rem;
-        overflow-x: scroll;
-        font-size: 14px;
-        opacity: 0.7;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 100%;
       "
     >
-      {{ deal?.description }}
-    </p>
-    <p style="font-weight: 550">
-      $ {{ deal?.minPrice }} - $ {{ deal?.maxPrice }}
-    </p>
-    <p style="font-weight: 550">Ends in</p>
-    <a style="margin-top: 1rem" class="link" routerLink="/">See all deals</a>
+      <div style="height: 6rem; width: 47%" *ngFor="let x of departments">
+        <img [src]="x.image" alt="img" style="width: 100%" />
+        <p style="margin: 0.5rem 0 1rem">{{ x.title }}</p>
+      </div>
+      <a style="margin-top: 1rem !important" class="link" routerLink="/">
+        All Departments
+      </a>
+    </div>
   </div>
   <div style="height: 0.4rem; width: 100%; background-color: #d5dbdb"></div>
-  <img
-    src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Karu/2020/May/Hero/Karu_mHero_Toys_en_US._SX828_CB431859413_.jpg"
-    style="width: 100%"
-    alt="img"
-  />
-  <div style="height: 0.4rem; width: 100%; background-color: #d5dbdb"></div>
+
+  <div
+    (click)="scroll()"
+    style="
+      padding: 5px 0;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      background-color: #37475a;
+    "
+  >
+    <mat-icon style="color: #d5dbdb; margin: 0">arrow_drop_up</mat-icon>
+    <p style="margin: 0; color: #d5dbdb; font-size: 12px">TOP OF PAGE</p>
+  </div>
+  <app-mfooter></app-mfooter>
 </div>

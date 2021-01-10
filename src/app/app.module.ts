@@ -1,3 +1,5 @@
+import { MfooterComponent } from './home/mfooter/mfooter.component';
+import { MobileImageCardComponent } from './home/mobile-image-card/mobile-image-card.component';
 import { IsloggedinDirective } from './isloggedin.directive';
 import { SignupComponent } from './signup/signup.component';
 import { SigninComponent } from './signin/signin.component';
@@ -47,7 +49,9 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
     FooterComponent,
     SigninComponent,
     SignupComponent,
-    IsloggedinDirective
+    IsloggedinDirective,
+    MobileImageCardComponent,
+    MfooterComponent
   ],
   imports: [
     BrowserModule,

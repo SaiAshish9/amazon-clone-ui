@@ -1,1 +1,63 @@
-<p>mobile-image-card works!</p>
+<div class="container">
+  <p>{{ title }}</p>
+
+  <div
+    *ngIf="!showFour"
+    style="
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+      min-height: 15rem;
+    "
+  >
+    <div
+      *ngFor="let n of data | slice: 0:9"
+      style="margin: 5px 0; width: 30%; height: 33%; background-color: #f8f8f8"
+    >
+      <img
+        [src]="n"
+        style="background-color: #f8f8f8; width: 100%; height: 7rem"
+        alt="img"
+      />
+    </div>
+  </div>
+
+  <div
+    *ngIf="showFour"
+    style="
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+      min-height: 15rem;
+    "
+  >
+    <div
+      *ngFor="let n of data | slice: 0:4"
+      style="
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 5px 0;
+        width: 40%;
+        height: 50%;
+      "
+    >
+      <img
+        [src]="n"
+        style="background-color: #f8f8f8; max-width: 100%; height: 7rem"
+        alt="img"
+      />
+    </div>
+  </div>
+
+  <a style="margin-top: 1rem !important" class="link" routerLink="/">
+    {{ descAvailable ? "See more" : "Shop now" }}
+  </a>
+</div>
+<div style="height: 0.4rem; width: 100%; background-color: #d5dbdb"></div>

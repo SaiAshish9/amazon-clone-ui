@@ -242,7 +242,7 @@
           margin-right: 5px;
         "
       >
-        Sign In
+        {{name=='Sign in'?'Sign In':'Hello, ' + name }}
       </p>
       <nb-icon
         [options]="{ animation: { type: 'pulse' } }"
@@ -270,7 +270,9 @@
       </p>
     </div>
   </div>
-  <div style="width: 100%; min-height: 2.7rem; height: 6.5vh; margin: 10px 0 5px">
+  <div
+    style="width: 100%; min-height: 2.7rem; height: 6.5vh; margin: 10px 0 5px"
+  >
     <app-search hideDropDown></app-search>
   </div>
   <div

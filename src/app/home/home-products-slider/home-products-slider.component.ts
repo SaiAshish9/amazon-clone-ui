@@ -21,7 +21,10 @@ export class HomeProductsSliderComponent implements OnInit {
   ngOnInit(): void {
     this.fn.subscribe(
       (data: any) => {
-        if(this.displayTag)
+        
+        if(this.link){
+         this.displayTag=true
+        }
         this.title = data[0]['name'];
         this.data = data[0]['images'];
       },

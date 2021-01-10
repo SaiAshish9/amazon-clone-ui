@@ -6,8 +6,17 @@
 }
 
 @media only screen and (max-width: 1000px) {
-  .container {
-    display: none;
+  .container,
+  .description {
+    display: none !important;
+  }
+
+  #description {
+    white-space: nowrap;
+    padding-right: 1rem;
+    overflow-x: scroll;
+    font-size: 14px;
+    opacity: 0.7;
   }
 }
 
@@ -37,12 +46,12 @@
   outline: none;
   cursor: pointer;
   &:active {
-    box-shadow: 1px 1px  1px 1px orange;
+    box-shadow: 1px 1px 1px 1px orange;
     border: 1px solid orange;
     background: #f0c14b;
   }
 }
 
-p::-webkit-scrollbar{
-  display:none;
+p::-webkit-scrollbar {
+  display: none;
 }
