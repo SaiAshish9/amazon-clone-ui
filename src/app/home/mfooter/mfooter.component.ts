@@ -1,15 +1,25 @@
+import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
+import { HomedetailsService } from 'src/app/services/homedetails.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-mfooter',
   templateUrl: './mfooter.component.html',
-  styleUrls: ['./mfooter.component.scss']
+  styleUrls: ['./mfooter.component.scss'],
 })
 export class MfooterComponent implements OnInit {
+  constructor(
+    private service: HomedetailsService,
+    private cookieService: CookieService,
+    private route:Router
+  ) {}
 
-  constructor() { }
+  isLoggedIn() {
+    return this.service.isLoggedIn();
+  }
 
-  options=[
+  options = [
     'Amazon.com',
     'Your Lists',
     'Find a Gift',
@@ -21,10 +31,24 @@ export class MfooterComponent implements OnInit {
     'Sell products on Amazon ',
     'Returns',
     'Customer Service',
-  ]
+  ];
 
-
-  ngOnInit(): void {
+  signOut() {
+    this.service.getEmail(this.cookieService.get('token')).subscribe(
+      (data: any) => {
+        this.cookieService.delete('token');
+        this.route.navigate([
+          'signin',
+          {
+            id: encodeURIComponent(data.email),
+          },
+        ]);
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
   }
 
+  ngOnInit(): void {}
 }

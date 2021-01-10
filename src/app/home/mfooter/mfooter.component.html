@@ -76,11 +76,28 @@
   </div>
 
   <p
+    *ngIf="!isLoggedIn(); else loggedIn"
     routerLink="signin"
     style="outline: none; color: #fff; font-weight: 550; margin: 2rem 0 0rem"
   >
     Already a customer? Sign In
   </p>
+
+  <ng-template #loggedIn>
+    <p
+      routerLink="signin"
+      style="outline: none; color: #fff; font-weight: 500; margin: 2rem 0 0rem"
+    >
+      Switch Accounts
+    </p>
+    <p
+      (click)="signOut()"
+      routerLink="signin"
+      style="outline: none; color: #fff; font-weight: 500; margin: 1rem 0 0rem"
+    >
+      Sign Out
+    </p>
+  </ng-template>
 
   <div
     style="
