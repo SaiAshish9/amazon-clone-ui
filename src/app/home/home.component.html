@@ -53,7 +53,7 @@
       alt="img"
     />
     <div style="height: 0.4rem; width: 100%; background-color: #d5dbdb"></div>
-    <div *ngIf="isLoggedIn(); else loggedInImage" style="padding: 1rem">
+    <div *ngIf="!isLoggedIn(); else loggedInImage;" style="padding: 1rem">
       <p style="font-size: 1.2rem">Sign in for the best experience</p>
       <button style="margin-bottom: 0.8rem" routerLink="signin" class="btn">
         Sign in
@@ -102,7 +102,7 @@
       <p style="font-weight: 550">
         $ {{ deal?.minPrice }} - $ {{ deal?.maxPrice }}
       </p>
-      <p style="font-weight: 550">Ends in</p>
+      <p id="date" style="font-weight: 550"></p>
       <a style="margin-top: 1rem" class="link" routerLink="/">See all deals</a>
     </div>
     <div style="height: 0.4rem; width: 100%; background-color: #d5dbdb"></div>
