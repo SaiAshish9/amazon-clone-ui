@@ -38,6 +38,24 @@ export class NavbarComponent implements OnInit {
     'Music Library',
   ];
 
+  navbarOptions=[
+    'Home',
+    'Account',
+    'Orders',
+    'Buy Again',
+    'Lists',
+    'Your Browsing History',
+    'Your Recommendations',
+    'Customer Service'
+  ]
+
+  exploreOptions=[
+    'Home',
+    'Health & Household',
+    'Books',
+    'PC'
+  ]
+
   categories = [
     'Whole Foods',
     'Pharmacy',
@@ -54,6 +72,20 @@ export class NavbarComponent implements OnInit {
     'Books',
     'PC',
   ];
+
+
+  visible = false;
+  open(): void {
+    this.visible = true;
+  }
+
+ 
+
+  close(): void {
+    this.visible = false;
+  }
+
+
 
   ngOnInit(): void {
     if (this.cookieService.check('token')) {

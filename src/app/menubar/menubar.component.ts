@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -9,6 +9,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class MenubarComponent implements OnInit {
 
   constructor(private route:Router) { }
+
+
+  @Output() openDrawer = new EventEmitter();
+
+  openD(){
+    this.openDrawer.emit()
+  }
+
 
   options=[
     "Today's Deals",

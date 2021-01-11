@@ -17,6 +17,7 @@ export class HomeCategoriesComponent implements OnInit {
 
   recommendations:any=[]
 
+  
 
 
   ngOnInit(): void {

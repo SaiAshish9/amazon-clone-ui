@@ -31,6 +31,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { HeaderInterceptor } from "./services/HttpInterceptorBasicAuthService"
 import { NzPopoverModule } from 'ng-zorro-antd/popover';
 import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzDrawerModule } from 'ng-zorro-antd/drawer';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,7 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
     SignupComponent,
     IsloggedinDirective,
     MobileImageCardComponent,
-    MfooterComponent
+    MfooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,11 +62,13 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
     MaterialModule,
     BrowserAnimationsModule,
     NzCarouselModule,
-    NbThemeModule.forRoot(),
+    NzDrawerModule,
+    // NbThemeModule.forRoot(),
     NbEvaIconsModule,
     NbIconModule,
     NzPopoverModule,
-    NzButtonModule
+    NzButtonModule,
+    NzDrawerModule
   ],
   providers: [CookieService,  {
     provide: HTTP_INTERCEPTORS,

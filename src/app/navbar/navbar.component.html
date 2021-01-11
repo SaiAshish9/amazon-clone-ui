@@ -211,12 +211,29 @@
   </div>
 </div>
 
+<div class="menubar">
+  <app-menubar (openDrawer)="open()"></app-menubar>
+</div>
+
 <div [ngClass]="hovered ? 'overlay' : ''"></div>
 
 <div class="mcontainer" style="overflow-x: hidden">
   <div class="mnav">
     <div class="row">
-      <mat-icon style="color: #fff">menu</mat-icon>
+      <mat-icon
+        *ngIf="visible"
+        style="
+          position: absolute;
+          right: -5vh;
+          color: red;
+          z-index: 1000000000000000000000000 !important;
+        "
+        >close</mat-icon
+      >
+      <mat-icon (click)="open()" style="cursor: pointer; color: #fff"
+        >menu</mat-icon
+      >
+
       <img
         class="logo"
         style="height: 3rem; padding: 5px"
@@ -242,7 +259,7 @@
           margin-right: 5px;
         "
       >
-        {{name=='Sign in'?'Sign In':'Hello, ' + name }}
+        {{ name == "Sign in" ? "Sign In" : "Hello, " + name }}
       </p>
       <nb-icon
         [options]="{ animation: { type: 'pulse' } }"
@@ -321,3 +338,150 @@
     >Spring API</a
   >
 </div>
+
+<nz-drawer
+  [nzClosable]="false"
+  [nzVisible]="visible"
+  nzPlacement="left"
+  [nzCloseIcon]="close"
+  (nzOnClose)="close()"
+>
+  <ng-container style="position: absolute; padding: 2rem 0" *nzDrawerContent>
+    <div style="position: absolute; width: 100%; left: 0">
+      <p
+        style="
+          display: flex;
+          align-items: center;
+          font-weight: 550;
+          padding-left: 2rem;
+          font-size: 18px;
+        "
+      >
+        <mat-icon style="margin-right: 10px">person_outline</mat-icon>
+        Hello, {{ name }}
+      </p>
+      <div
+        style="
+          width: 100%;
+          left: 0;
+          height: 0.1rem;
+          width: 100%;
+          background-color: #d5dbdb;
+        "
+      ></div>
+      <div style="height: 0.6rem"></div>
+      <p
+        style="font-size: 16px; margin: 1rem 0; padding-left: 2rem"
+        *ngFor="let x of navbarOptions"
+      >
+        {{ x }}
+      </p>
+      <div
+        style="
+          width: 100%;
+          left: 0;
+          margin-bottom: 1rem;
+          height: 0.35rem;
+          width: 100%;
+          background-color: #d5dbdb;
+          margin-bottom: 1rem;
+        "
+      ></div>
+      <p
+        style="
+          padding-left: 2rem;
+          margin: 1rem 0;
+          font-weight: 550;
+          font-size: 16px;
+        "
+      >
+        Explore
+      </p>
+      <p style="font-size: 12px; margin-left: 2rem; opacity: 0.8">
+        TOP DEPARTMENTS
+      </p>
+      <p
+        style="padding-left: 2rem; font-size: 16px; margin: 1rem 0"
+        *ngFor="let x of exploreOptions"
+      >
+        {{ x }}
+      </p>
+
+      <div
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0 2rem;
+        "
+      >
+        <p style="margin: 0; font-size: 16px">See All Departments</p>
+        <mat-icon style="margin: 0">keyboard_arrow_right</mat-icon>
+      </div>
+
+      <div
+        style="
+          width: 100%;
+          left: 0;
+          height: 0.35rem;
+          width: 100%;
+          background-color: #d5dbdb;
+          margin: 1rem 0;
+        "
+      ></div>
+
+      <p
+        style="
+          padding-left: 2rem;
+          margin: 1rem 0;
+          font-weight: 550;
+          font-size: 16px;
+        "
+      >
+        Settings
+      </p>
+
+      <div style="display: flex; align-items: center; margin: 1rem 2rem">
+        <img
+          src="https://cdn.britannica.com/97/1597-004-05816F4E/Flag-India.jpg"
+          alt="img"
+          style="height: 1rem; margin-right: 10px"
+        />
+        <p style="font-size: 16px; margin: 0">English</p>
+      </div>
+
+      <div style="display: flex; align-items: center; margin: 1rem 2rem">
+        <mat-icon
+          style="
+            height: 14px;
+            font-size: 14px;
+            margin-right: 10px;
+            opacity: 0.7;
+          "
+          >language</mat-icon
+        >
+        <p style="font-size: 16px; margin: 0">India</p>
+      </div>
+
+      <p
+        *ngIf="isLoggedIn()"
+        (click)="signOut()"
+        style="font-size: 16px; margin: 1rem 2rem 3rem"
+      >
+        Sign Out
+      </p>
+      <p
+        *ngIf="!isLoggedIn()"
+        routerLink="/signin"
+        style="
+          cursor: pointer;
+          outline: none;
+          font-size: 16px;
+          margin: 1rem 2rem 3rem;
+        "
+      >
+        Sign In
+      </p>
+    </div>
+  </ng-container>
+</nz-drawer>

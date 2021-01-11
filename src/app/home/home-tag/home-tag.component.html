@@ -8,7 +8,13 @@
     top: 0;
   "
 >
-  <nz-carousel nzAutoPlay [nzEnableSwipe]="false" [nzDots]="false" #carousel>
+  <nz-carousel
+    *ngIf="categories.length > 0"
+    nzAutoPlay
+    [nzEnableSwipe]="false"
+    [nzDots]="false"
+    #carousel
+  >
     <!-- <mat-icon
     (click)="prev()"
     style="
@@ -52,6 +58,7 @@
     <img
       (click)="prev()"
       alt="img"
+      *ngIf="categories.length > 0"
       src="https://assets.stickpng.com/thumbs/580b57fcd9996e24bc43c43e.png"
       style="
         cursor: pointer;
@@ -63,6 +70,7 @@
     />
     <img
       (click)="next()"
+      *ngIf="categories.length > 0"
       src="https://assets.stickpng.com/thumbs/580b57fcd9996e24bc43c43e.png"
       alt="img"
       style="cursor: pointer; width: 2rem; font-weight: lighter; color: #fff"
@@ -71,7 +79,7 @@
 </div>
 
 <div style="position: relative; z-index: 1; width: 100%; padding: 0 1rem">
-  <div class="tag">
+  <div class="tag" *ngIf="categories.length > 0">
     <p class="title">
       You are on amazon.com. You can also shop on Amazon India for millions of
       products with fast local delivery.

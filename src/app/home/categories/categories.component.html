@@ -32,13 +32,15 @@
           justify-content: space-between;
         "
       >
-      <img
-      [src]="x[1]"
-      alt="img"
-      style="width: 80%;height:50%;margin:0"
-      />
-      <p class="title" style="font-size: 10px;text-align: center;">{{ x[0] }}</p>
-    </div>
+        <img
+          [src]="x[1]"
+          alt="img"
+          style="width: 80%; height: 50%; margin: 0"
+        />
+        <p class="title" style="font-size: 10px; text-align: center">
+          {{ x[0] }}
+        </p>
+      </div>
     </div>
   </div>
   <div class="card" *ngFor="let x of categories | slice: 0:3">
@@ -79,7 +81,7 @@
   </div>
 </div>
 <ng-template #spinner>
-  <div class="row" style="height: 20vh">
+  <div class="row" style="height: 40vh; width: 100%">
     <mat-spinner diameter="30"></mat-spinner>
   </div>
   <div style="height: 50vh"></div>
