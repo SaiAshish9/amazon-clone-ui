@@ -32,6 +32,8 @@ import { HeaderInterceptor } from "./services/HttpInterceptorBasicAuthService"
 import { NzPopoverModule } from 'ng-zorro-antd/popover';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzDrawerModule } from 'ng-zorro-antd/drawer';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -68,7 +70,8 @@ import { NzDrawerModule } from 'ng-zorro-antd/drawer';
     NbIconModule,
     NzPopoverModule,
     NzButtonModule,
-    NzDrawerModule
+    NzDrawerModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [CookieService,  {
     provide: HTTP_INTERCEPTORS,
